@@ -1,4 +1,4 @@
-def minion_game(string):
+def minion_game(palabra):
     # Establecemos los puntos de ambos jugadores como 0
     Puntos_Kevin = 0
     Puntos_Stuart = 0
@@ -11,7 +11,7 @@ def minion_game(string):
     return [Puntos_Kevin, Puntos_Stuart]
 
 if __name__ == '__main__':
-    palabra = "Banana"
+    palabra = input("Introduzca la palabra: ")
     vocales = ["a", "e", "i", "o", "u"]   # Definimos las vocales en una lista
-    resultado = minion_game("Banana")
+    resultado = minion_game(palabra)
     print ("Los puntos de Kevin son {} y los de Stuart son {}".format(resultado[0], resultado[1]))
