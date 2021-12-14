@@ -1,9 +1,11 @@
+from colorama import Fore, init
+init(autoreset=False)   # De esta manera la salida al ejecutar el codigo sera entera en amarillo
+
 def elegir_palabra():   # Definimos una funcion para elegir la palabra que queramos
     while True:
-        palabrita = input("Introduzca la palabra: ")
+        palabrita = input(Fore.YELLOW + "Introduzca la palabra: ")
         if palabrita == str(palabrita):   # De esta manera nos aseguramos que el usuario introduce una palabra y no otra cosa
             return palabrita
-            break
         else:
             print ("Introduzca una palabra, no me trolees por favor")
 
@@ -22,7 +24,7 @@ def minion_game():
 def ganador(resultado):   # Esta funcion nos va a decir el ganador
     if resultado[0] > resultado[1]:
         print ("Ha ganado Kevin")
-        print ("Con un total de {}".format(resultado[0]))
+        print ("Con un total de {} puntos".format(resultado[0]))
     elif resultado[0] < resultado[1]:
         print ("Ha ganado Stuart")
         print ("Con un total de {} puntos".format(resultado[1]))
