@@ -7,6 +7,21 @@ def printeartablero(tableroajedrez):
         contador_indice += 1
     print("\n")   # Salto de linea para los futuros tableros
 
+def movimiento(fila, columna):
+    if fila == 0:
+            tableroajedrez[fila+1][columna] = tableroajedrez[fila][columna]
+            tableroajedrez[fila][columna] = ' '
+    elif fila == 1:
+        if tableroajedrez[fila+1][columna] != ' ':
+            tableroajedrez[fila-1][columna] = tableroajedrez[fila][columna]
+            tableroajedrez[fila][columna] = ' '
+        else:
+            tableroajedrez[fila+1][columna] = tableroajedrez[fila][columna]
+            tableroajedrez[fila][columna] = ' '
+    elif fila == 2:
+        tableroajedrez[fila-1][columna] = tableroajedrez[fila][columna]
+        tableroajedrez[fila][columna] = ' '
+
 def encerrada(fila, columna):
     if fila == 0 and tableroajedrez[fila+1][columna] != ' ':
         error = True   # Esta condicion se cumple si abajo hay una ficha
