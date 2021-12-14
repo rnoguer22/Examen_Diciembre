@@ -95,3 +95,62 @@ while True:
         print("El jugador negro no se puede mover, volvemos a crear el tablero")
     else:
         break
+
+turno = random.randint(0, 1)
+while True:
+    if turno == 1:
+        if errorx == False and errora == False:
+            movimiento(x, 0)
+            x = cambio(x, 0)
+            errora = encerrada(a, 0)
+        elif errory == False and errorb == False:
+            movimiento(y, 1)
+            y = cambio(y, 1)
+            errorb = encerrada(b, 1)
+        elif errorz == False and errorc == False:
+            movimiento(z, 2)
+            z = cambio(z, 2)
+            errorc = encerrada(c, 2)
+        elif errorx == False:
+            movimiento(x, 0)
+            x = cambio(x, 0)
+            errora = encerrada(a, 0)
+        elif errory == False:
+            movimiento(y, 1)
+            y = cambio(y, 1)
+            errorb = encerrada(b, 1)
+        elif errorz == False:
+            movimiento(z, 2)
+            z = cambio(z, 2)
+            errorc = encerrada(c, 2)
+        else:
+            break
+        turno = 0
+    elif turno == 0:
+        if errora == False and errorx == False:
+            movimiento(a, 0)
+            a = cambio(a, 0)
+            errorx = encerrada(x, 0)
+        elif errorb == False and errory == False:
+            movimiento(b, 1)
+            b = cambio(b, 1)
+            errory = encerrada(y, 1)
+        elif errorc == False and errorz == False:
+            movimiento(c, 2)
+            c = cambio(c, 2)
+            errorz = encerrada(z, 2)
+        elif errora == False:
+            movimiento(a, 0)
+            a = cambio(a, 0)
+            errorx = encerrada(x, 0)
+        elif errorb == False:
+            movimiento(b, 1)
+            b = cambio(b, 1)
+            errory = encerrada(y, 1)
+        elif errorc == False:
+            movimiento(c, 2)
+            c = cambio(c, 2)
+            errorc = encerrada(z, 2)
+        else:
+            break
+        turno = 1
