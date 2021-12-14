@@ -22,6 +22,18 @@ def movimiento(fila, columna):
         tableroajedrez[fila-1][columna] = tableroajedrez[fila][columna]
         tableroajedrez[fila][columna] = ' '
 
+def cambio(fila, columna):
+    if  fila == 0:
+        fila += 1
+    elif fila == 1:
+        if tableroajedrez[fila+1][columna] != ' ':
+            fila -= 1
+        else:
+            fila += 1
+    elif fila == 2:
+        fila -= 1
+    return fila   # Devuelve la nueva posicion de la ficha
+
 def encerrada(fila, columna):
     if fila == 0 and tableroajedrez[fila+1][columna] != ' ':
         error = True   # Esta condicion se cumple si abajo hay una ficha
