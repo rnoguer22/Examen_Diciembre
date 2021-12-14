@@ -5,7 +5,7 @@ def printeartablero(tableroajedrez):
     for tableroajedrez[contador_indice] in tableroajedrez:
         print(tableroajedrez[contador_indice])
         contador_indice += 1
-    print("\n")   # Salto de linea para los futuros tableros
+    print("\n")   # Salto de linea para los futuros tableros, para que no salgan pegados los unos con los otros
 
 def movimiento(fila, columna):
     if fila == 0:
@@ -94,7 +94,7 @@ while True:
     elif errora and errorb and errorc == True:   # Y viceversa
         print("El jugador negro no se puede mover, volvemos a crear el tablero")
     else:
-        break
+        break   # para que no se generen tableros infinitos
 
 turno = random.randint(0, 1)
 while True:
