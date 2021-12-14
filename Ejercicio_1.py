@@ -19,8 +19,17 @@ def minion_game():
             Puntos_Kevin += len(palabra) - i   # Si la letra es una vocal, calcula los puntos de Kevin
     return [Puntos_Kevin, Puntos_Stuart]
 
+def ganador(resultado):   # Esta funcion nos va a decir el ganador
+    if resultado[0] > resultado[1]:
+        print ("Ha ganado Kevin")
+    elif resultado[0] < resultado[1]:
+        print ("Ha ganado Stuart")
+    else:
+        print("Vaya, han empatado...")
+
 if __name__ == '__main__':
-    palabra = elegir_palabra()
+    palabra = elegir_palabra()   # Elegimos la palabra
     vocales = ["a", "e", "i", "o", "u"]   # Definimos las vocales en una lista
-    resultado = minion_game()
+    resultado = minion_game()   # Calculamos los puntos de ambos jugadores
     print ("Los puntos de Kevin son {} y los de Stuart son {}".format(resultado[0], resultado[1]))
+    ganador(resultado)
