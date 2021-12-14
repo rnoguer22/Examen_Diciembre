@@ -154,3 +154,4 @@ while True:
         else:
             break
         turno = 1
+    printeartablero(tableroajedrez)
