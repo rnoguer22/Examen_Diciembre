@@ -21,41 +21,50 @@ def encerrada(fila, columna):
         error = False
     return error   # Devuelve el boolean asociado a error, para saber si una ficha esta encerrada o no
 
+# Bucle infinito para la creacion de cada jugada del ajedrez
+while True:
 # Creamos el tablero vacio
-tableroajedrez = [
-[' ', ' ', ' '], 
-[' ', ' ', ' '],
-[' ', ' ', ' '], 
-]
+    tableroajedrez = [
+    [' ', ' ', ' '], 
+    [' ', ' ', ' '],
+    [' ', ' ', ' '], 
+    ]
 
 # Creamos variables aleatorias que utilizaremos proximamente
-x = random.randint(0,2)
-y = random.randint(0,2)
-z = random.randint(0,2)
-a = random.randint(0,2)
-b = random.randint(0,2)
-c = random.randint(0,2)
-
-while x == a:
+    x = random.randint(0,2)
+    y = random.randint(0,2)
+    z = random.randint(0,2)
     a = random.randint(0,2)
-while y == b:
     b = random.randint(0,2)
-while z == c:
     c = random.randint(0,2)
 
+    while x == a:
+        a = random.randint(0,2)
+    while y == b:
+        b = random.randint(0,2)
+    while z == c:
+        c = random.randint(0,2)
+
 # Establecemos la posicion de las piezas
-tableroajedrez[x][0] = chr(0x2656)
-tableroajedrez[y][1] = chr(0x2656)
-tableroajedrez[z][2] = chr(0x2656)
-tableroajedrez[a][0] = chr(0x265C)
-tableroajedrez[b][1] = chr(0x265C)
-tableroajedrez[c][2] = chr(0x265C)
+    tableroajedrez[x][0] = chr(0x2656)
+    tableroajedrez[y][1] = chr(0x2656)
+    tableroajedrez[z][2] = chr(0x2656)
+    tableroajedrez[a][0] = chr(0x265C)
+    tableroajedrez[b][1] = chr(0x265C)
+    tableroajedrez[c][2] = chr(0x265C)
 
-printeartablero(tableroajedrez)   # Printamos el primer tablero, con las piezas en una posicion random
+    printeartablero(tableroajedrez)   # Printamos el primer tablero, con las piezas en una posicion random
 
-errorx = encerrada(x, 0)
-errory = encerrada(y, 1)
-errorz = encerrada(z, 2)
-errora = encerrada(a, 0)
-errorb = encerrada(b, 1)
-errorc = encerrada(c, 2)
+    errorx = encerrada(x, 0)
+    errory = encerrada(y, 1)
+    errorz = encerrada(z, 2)
+    errora = encerrada(a, 0)
+    errorb = encerrada(b, 1)
+    errorc = encerrada(c, 2)
+
+    if errorx and errory and errorz == True:   # Esto significa que en el primer tablero las piezas negras obstrullen a las blancas, por lo que no se podrian mover
+        print("El jugador blanco no se puede mover, volvemos a crear el tablero")
+    elif errora and errorb and errorc == True:   # Y viceversa
+        print("El jugador negro no se puede mover, volvemos a crear el tablero")
+    else:
+        break
