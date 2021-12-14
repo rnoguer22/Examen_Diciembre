@@ -22,8 +22,11 @@ def minion_game():
 def ganador(resultado):   # Esta funcion nos va a decir el ganador
     if resultado[0] > resultado[1]:
         print ("Ha ganado Kevin")
+        print ("Con un total de {}".format(resultado[0]))
     elif resultado[0] < resultado[1]:
         print ("Ha ganado Stuart")
+        print ("Con un total de {} puntos".format(resultado[1]))
+
     else:
         print("Vaya, han empatado...")
 
