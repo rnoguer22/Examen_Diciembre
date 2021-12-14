@@ -155,3 +155,7 @@ while True:
             break
         turno = 1
     printeartablero(tableroajedrez)
+if errorx and errory and errorz == True:
+    print("Ha ganado el jugador negro, ya que es imposible que el jugador blanco se mueva")
+elif errora and errorb and errorc == True:
+    print("Ha ganado el jugador blanco, ya que el jugador negro no se puede mover")
